@@ -2,7 +2,9 @@ name: Build Windows EXE
 
 on:
   push:
-    branches: [ main, master ]
+    branches:
+      - main
+      - master
   workflow_dispatch:
 
 jobs:
@@ -26,7 +28,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Install pkg globally
         run: npm install -g pkg@5.8.0
